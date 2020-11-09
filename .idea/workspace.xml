@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a6b8c0f-2ab6-4161-864c-f1446073b92f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/forms/post.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/admin/manage_post.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/admin/post_editor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/configs.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/configs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/libs/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/post.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/post.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/admin/post_editor.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin/post_editor.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/web/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/web/admin.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,10 +16,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/configs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="25" column="76" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/web/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="364" column="63" selection-start-line="364" selection-start-column="63" selection-end-line="364" selection-end-column="63" />
+            <state relative-caret-position="343">
+              <caret line="439" column="20" lean-forward="true" selection-start-line="439" selection-start-column="20" selection-end-line="439" selection-end-column="20" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -31,21 +40,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/libs/helpers.py">
+        <entry file="file://$PROJECT_DIR$/app/templates/admin/post_editor.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+            <state relative-caret-position="642">
+              <caret line="117" column="14" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/post.py">
+        <entry file="file://$PROJECT_DIR$/app/libs/helpers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="23" column="48" lean-forward="true" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+            <state relative-caret-position="567">
+              <caret line="142" column="39" lean-forward="true" selection-start-line="142" selection-start-column="39" selection-end-line="142" selection-end-column="39" />
               <folding>
-                <element signature="e#3#32#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,7 +138,6 @@
         <option value="$PROJECT_DIR$/app/models/link.py" />
         <option value="$PROJECT_DIR$/app/forms/link.py" />
         <option value="$PROJECT_DIR$/app/templates/admin/manage_link.html" />
-        <option value="$PROJECT_DIR$/app/configs.py" />
         <option value="$PROJECT_DIR$/app/templates/macros.html" />
         <option value="$PROJECT_DIR$/app/static/css/admin.css" />
         <option value="$PROJECT_DIR$/app/static/js/tools.js" />
@@ -138,9 +146,10 @@
         <option value="$PROJECT_DIR$/app/forms/post.py" />
         <option value="$PROJECT_DIR$/app/templates/admin/manage_post.html" />
         <option value="$PROJECT_DIR$/app/models/post.py" />
-        <option value="$PROJECT_DIR$/app/templates/admin/post_editor.html" />
-        <option value="$PROJECT_DIR$/app/web/admin.py" />
+        <option value="$PROJECT_DIR$/app/configs.py" />
         <option value="$PROJECT_DIR$/app/libs/helpers.py" />
+        <option value="$PROJECT_DIR$/app/web/admin.py" />
+        <option value="$PROJECT_DIR$/app/templates/admin/post_editor.html" />
       </list>
     </option>
   </component>
@@ -250,7 +259,7 @@
       <updated>1604838389061</updated>
       <workItem from="1604838390440" duration="2272000" />
       <workItem from="1604840738488" duration="9586000" />
-      <workItem from="1604884296391" duration="14199000" />
+      <workItem from="1604884296391" duration="14825000" />
     </task>
     <task id="LOCAL-00001" summary="不推送文件">
       <created>1604884460093</created>
@@ -280,17 +289,24 @@
       <option name="project" value="LOCAL" />
       <updated>1604901407169</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="添加编辑页面、mkdown编辑器">
+      <created>1604903770554</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604903770554</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26057000" />
+    <option name="totallyTimeSpent" value="26683000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.141258" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.141258" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -304,7 +320,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.07049891" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.18438178" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Word Book" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -322,7 +338,8 @@
     <MESSAGE value="重构模板" />
     <MESSAGE value="添加后台分类管理、后台链接管理" />
     <MESSAGE value="添加后台评论管理" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加后台评论管理" />
+    <MESSAGE value="添加编辑页面、mkdown编辑器" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加编辑页面、mkdown编辑器" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://D:/WORKON_HOME/flaskblog/Lib/site-packages/flask_login/config.py" />
@@ -516,16 +533,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/configs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/static/css/admin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="545">
@@ -671,7 +678,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/post.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="267">
           <caret line="23" column="48" lean-forward="true" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
           <folding>
             <element signature="e#3#32#0" expanded="true" />
@@ -679,27 +686,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/post_editor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="95" column="14" lean-forward="true" selection-start-line="95" selection-start-column="14" selection-end-line="95" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/web/admin.py">
+    <entry file="file://$PROJECT_DIR$/app/libs/helpers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
-          <caret line="364" column="63" selection-start-line="364" selection-start-column="63" selection-end-line="364" selection-end-column="63" />
+          <caret line="142" column="39" lean-forward="true" selection-start-line="142" selection-start-column="39" selection-end-line="142" selection-end-column="39" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/libs/helpers.py">
+    <entry file="file://$PROJECT_DIR$/app/configs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+        <state relative-caret-position="480">
+          <caret line="25" column="76" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/web/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="439" column="20" lean-forward="true" selection-start-line="439" selection-start-column="20" selection-end-line="439" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/admin/post_editor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="117" column="14" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
         </state>
       </provider>
     </entry>
