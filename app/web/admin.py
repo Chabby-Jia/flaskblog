@@ -1,12 +1,13 @@
 import json
-from flask import render_template, url_for, redirect, request, abort, flash, current_app
+import os
+from flask import render_template, url_for, redirect, request, abort, flash, current_app , send_from_directory
 from flask_login import login_required
 from app.web import web
 from app.forms.category import NewCategoryForm, EditCategoryForm
 from app.forms.link import NewLinkForm, EditLinkForm
 from app.models import Category, Link, Comment , Post
-from app.libs.extensions import db
-from app.libs.helpers import get_form_error_items, check_ajax_request_data, redirect_back, remove_html_tag
+from app.libs.extensions import db , csrf_protect
+from app.libs.helpers import get_form_error_items, check_ajax_request_data, redirect_back , allowed_file, avoided_file_duplication, remove_html_tag
 from app.forms.post import PostForm
 
 
@@ -420,3 +421,42 @@ def edit_post(post_id):
         form.description.data = post.description
         form.can_comment.data = post.can_comment
     return render_template('admin/post_editor.html', form=form, post=post)
+
+
+
+@web.route('/admin/uploaded-image/<filename>')
+@login_required
+def uploaded_image(filename):
+    """
+    获取上传图片的 Response
+    :param filename: 文件名
+    """
+    return send_from_directory(current_app.config['UPLOAD_FOLDER'], filename)
+
+
+
+
+
+@web.route('/admin/upload-image', methods=['POST'])
+@csrf_protect.exempt
+@login_required
+def upload_image():
+    """上传图片视图"""
+    file = request.files.get('editormd-image-file')
+    base_info = {
+        'success': 0,
+        'message': '图片上传失败'
+    }
+    if not file:
+        return json.dumps(base_info)
+    # 判断文件格式是否被允许
+    if not allowed_file(file.filename):
+        base_info['message'] = '图片格式不被允许'
+        return json.dumps(base_info)
+    # 避免文件名重复
+    filename = avoided_file_duplication(file.filename)
+    file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
+    base_info['success'] = 1
+    base_info['message'] = '图片上传成功'
+    base_info['url'] = url_for('web.uploaded_image', filename=filename)
+    return json.dumps(base_info)

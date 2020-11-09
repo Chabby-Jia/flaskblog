@@ -3,7 +3,8 @@ import os
 from datetime import timedelta
 from app.models import Admin, Category, Comment, Link, Post
 
-
+# 获取项目根目录路径
+basedir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 class BaseConfig:
     """
     配置基类，公用配置写在这里
@@ -19,7 +20,10 @@ class BaseConfig:
     MODELS = {'Admin': Admin, 'Category': Category, 'Comment': Comment, 'Link': Link, 'Post': Post}
     # 后台分页数量
     ADMIN_PER_PAGE = 20
-
+    # 图片文章上传路径
+    UPLOAD_FOLDER = os.path.join(basedir, 'app/uploads')
+    # 允许上传的文件格式
+    ALLOWED_EXTENSIONS = ("jpg", "jpeg", "gif", "png", "bmp", "webp", 'svg')
 
 class DevelopmentConfig(BaseConfig):
     """

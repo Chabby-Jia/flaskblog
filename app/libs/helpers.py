@@ -1,6 +1,9 @@
 import json
 import re
 # 引入 ImmutableMultiDict 做数据类型判断
+import time
+# 引入 secure_filename 方法
+from werkzeug.utils import secure_filename
 from werkzeug.datastructures import ImmutableMultiDict
 from flask import current_app
 
@@ -77,11 +80,11 @@ def check_ajax_request_data(data, target_model_name):
     return record
 
 
-
-
 # 引入必要模块
 from urllib.parse import urlparse, urljoin
 from flask import request, redirect, url_for
+
+
 def is_safe_url(target):
     """
     校验 URL 是否属于本站
@@ -91,6 +94,8 @@ def is_safe_url(target):
     ref_url = urlparse(request.host_url)
     test_url = urlparse(urljoin(request.host_url, target))
     return test_url.scheme in ('http', 'https') and ref_url.netloc == test_url.netloc
+
+
 def redirect_back(default_endpoint='web.index', **kwargs):
     """
     执行跳转操作，可用于各种 POST 操作之后的跳转
@@ -105,7 +110,6 @@ def redirect_back(default_endpoint='web.index', **kwargs):
     return redirect(url_for(default_endpoint, **kwargs))
 
 
-
 def remove_html_tag(html_str):
     """
     去除 HTML 标记
@@ -114,3 +118,28 @@ def remove_html_tag(html_str):
     """
     regex = re.compile('<[^>]*>')
     return regex.sub('', html_str).replace('\n', '').replace('\r', '').replace(' ', '')
+
+
+def allowed_file(filename):
+    """
+    校验文件格式是否被允许
+    :param filename: 需要校验的文件名
+    :return: True or False
+    """
+    allowed_extensions = current_app.config['ALLOWED_EXTENSIONS']
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in allowed_extensions
+
+
+def avoided_file_duplication(filename):
+    """
+    给文件名添加 UNIX 时间戳避免文件名重复
+    :param filename: 需要处理的文件名
+    :return: 处理后的文件名
+    """
+    unix_time_list = str(time.time()).split('.')
+    second = unix_time_list[0]
+    millisecond = unix_time_list[1]
+    extension = filename.rsplit('.', 1)[1]
+    prefix = filename.rsplit('.', 1)[0]
+    filename = f'{prefix}s{second}ms{millisecond}.{extension}'
+    return secure_filename(filename)
