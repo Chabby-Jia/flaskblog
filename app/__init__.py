@@ -5,12 +5,12 @@ import os
 from flask import Flask
 # 引入配置字典
 from app.configs import configs
-from app.libs.extensions import db, migrate, get_login_manager, csrf_protect, mail
+from app.libs.extensions import db, migrate, get_login_manager, csrf_protect, mail ,  whooshee
 from app.libs.fake_data import FakeData
 from app.models import Post, Category, post_category_middle, Comment, Admin, Link
 # 引入 datetime
 from datetime import datetime
-from app.libs.custom_filters import switch_link_tag
+from app.libs.custom_filters import switch_link_tag , get_search_part
 
 
 
@@ -44,7 +44,7 @@ def add_template_filters(app):
     注册自定义模板验证器
     """
     app.add_template_filter(switch_link_tag)
-
+    app.add_template_filter(get_search_part)
 
 def register_blueprints(app):
     """
@@ -69,6 +69,8 @@ def register_extensions(app):
     login_manager = get_login_manager()
     login_manager.init_app(app)
     mail.init_app(app)
+    whooshee.init_app(app)
+
 
 # 我们需要在工厂函数中注册，所以需要构建一个函数在工厂函数中调用
 def register_template_context(app):

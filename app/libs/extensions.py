@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy as _SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_mail import Mail
-
+from flask_whooshee import Whooshee
 
 
 
@@ -46,3 +46,4 @@ db = SQLALCHEMY()
 migrate = Migrate()
 csrf_protect = CSRFProtect()
 mail = Mail()
+whooshee = Whooshee()

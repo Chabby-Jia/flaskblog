@@ -34,6 +34,12 @@ class BaseConfig:
     MAIL_USERNAME = os.getenv('MAIL_USERNAME')
     MAIL_PASSWORD = os.getenv('MAIL_PASSWORD')
 
+
+    #匹配最小搜索字符
+    WHOOSHEE_MIN_STRING_LEN = 2
+
+
+
 class DevelopmentConfig(BaseConfig):
     """
     开发环境配置类

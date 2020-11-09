@@ -3,7 +3,13 @@
 
 from datetime import datetime
 from app.models.base import Base
-from app.libs.extensions import db
+from app.libs.extensions import db , whooshee
+
+
+
+# 增加一个装饰器即可
+# `register_model` 接受的参数是需要检索的字段名称
+@whooshee.register_model('title', 'content')
 class Post(Base):
     """
     Blog文章数据表模型类

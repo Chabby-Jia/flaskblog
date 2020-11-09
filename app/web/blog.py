@@ -126,3 +126,28 @@ def reply_error(fields_errors):
     """
     back_url = request.args.get('back_url')
     return render_template('blog/reply_error.html', fields_errors=fields_errors.split(','), back_url=back_url)
+
+
+
+@web.route('/search')
+def search():
+    """搜索视图"""
+    admin = Admin.query.first()
+    per_page = admin.post_per_page
+    search_str = request.args.get('search').strip()
+    if not search_str:
+        flash('搜索内容不能为空。', 'warning')
+        return redirect_back()
+
+    if len(search_str) < 2:
+        flash('搜索内容不能少于两个字符。', 'warning')
+        return redirect_back()
+
+    pagination = Post.query.whooshee_search(search_str).order_by(Post.create_time.desc()).paginate(per_page=per_page)
+
+    if pagination.total == 0:
+        flash(f'没有搜索到任何包含 {search_str} 的结果。', 'warning')
+        return redirect_back()
+
+    # search.html 后面会创建
+    return render_template('blog/search.html', search_str=search_str, pagination=pagination)
