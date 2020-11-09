@@ -11,8 +11,8 @@ def index():
     # 从 admin 表中获取 per_page 的值
     admin = Admin.query.first()
     per_page = admin.per_page
-    pagination = Post.query.order_by(
-        Post.create_time.desc()).paginate(per_page=per_page)
+    # 过滤文章只查询已发布且不再回收站中的
+    pagination = Post.query.filter_by(trash=False, published=True).order_by(Post.create_time.desc()).paginate(per_page=per_page)
     return render_template('blog/index.html', pagination=pagination)
 
 
@@ -32,5 +32,6 @@ def category(name_or_alias):
         category = Category.query.filter(Category.name == name_or_alias).first_or_404()
     admin = Admin.query.first()
     per_page = admin.per_page
-    pagination = Post.query.with_parent(category).order_by(Post.create_time.desc()).paginate(per_page=per_page)
+    # 过滤文章只查询已发布且不再回收站中的
+    pagination = Post.query.with_parent(category).filter_by(trash=False, published=True).order_by(Post.create_time.desc()).paginate(per_page=per_page)
     return render_template('blog/category.html', category=category, pagination=pagination)

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a6b8c0f-2ab6-4161-864c-f1446073b92f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/configs.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/configs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/libs/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/admin/post_editor.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin/post_editor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/web/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/web/admin.py" afterDir="false" />
+    <list default="true" id="3a6b8c0f-2ab6-4161-864c-f1446073b92f" name="Default Changelist" comment="上传图片">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/blog/blog_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/blog/blog_base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/macros.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/macros.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/web/blog.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/web/blog.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,45 +16,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/configs.py">
+        <entry file="file://$PROJECT_DIR$/app/web/blog.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="25" column="76" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
+            <state relative-caret-position="1020">
+              <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/web/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="439" column="20" lean-forward="true" selection-start-line="439" selection-start-column="20" selection-end-line="439" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#33#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/templates/admin/post_editor.html">
+        <entry file="file://$PROJECT_DIR$/app/templates/macros.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="117" column="14" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/libs/helpers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="142" column="39" lean-forward="true" selection-start-line="142" selection-start-column="39" selection-end-line="142" selection-end-column="39" />
+            <state relative-caret-position="580">
+              <caret line="187" column="35" lean-forward="true" selection-start-line="187" selection-start-column="35" selection-end-line="187" selection-end-column="35" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#25498#25506#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,6 +67,7 @@
       <find>AjaxEditor</find>
       <find>category</find>
       <find>content_markdown</find>
+      <find>超过一页才</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -105,7 +85,6 @@
         <option value="$PROJECT_DIR$/app/static/js/toggle-navbar-bg.js" />
         <option value="$PROJECT_DIR$/app/static/js/index.js" />
         <option value="$PROJECT_DIR$/app/static/js/totop.js" />
-        <option value="$PROJECT_DIR$/app/web/blog.py" />
         <option value="$PROJECT_DIR$/app/forms/login.py" />
         <option value="$PROJECT_DIR$/app/models/admin.py" />
         <option value="$PROJECT_DIR$/app/templates/blog/admin.html" />
@@ -117,7 +96,6 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/templates/base.html" />
-        <option value="$PROJECT_DIR$/app/templates/blog/blog_base.html" />
         <option value="$PROJECT_DIR$/app/templates/blog/index.html" />
         <option value="$PROJECT_DIR$/app/templates/blog/category.html" />
         <option value="$PROJECT_DIR$/app/templates/login/login.html" />
@@ -138,7 +116,6 @@
         <option value="$PROJECT_DIR$/app/models/link.py" />
         <option value="$PROJECT_DIR$/app/forms/link.py" />
         <option value="$PROJECT_DIR$/app/templates/admin/manage_link.html" />
-        <option value="$PROJECT_DIR$/app/templates/macros.html" />
         <option value="$PROJECT_DIR$/app/static/css/admin.css" />
         <option value="$PROJECT_DIR$/app/static/js/tools.js" />
         <option value="$PROJECT_DIR$/app/templates/admin/manage_comment.html" />
@@ -150,6 +127,9 @@
         <option value="$PROJECT_DIR$/app/libs/helpers.py" />
         <option value="$PROJECT_DIR$/app/web/admin.py" />
         <option value="$PROJECT_DIR$/app/templates/admin/post_editor.html" />
+        <option value="$PROJECT_DIR$/app/web/blog.py" />
+        <option value="$PROJECT_DIR$/app/templates/blog/blog_base.html" />
+        <option value="$PROJECT_DIR$/app/templates/macros.html" />
       </list>
     </option>
   </component>
@@ -180,24 +160,6 @@
               <item name="Myblog" type="b2602c69:ProjectViewProjectNode" />
               <item name="Myblog" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Myblog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Myblog" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Myblog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Myblog" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Myblog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Myblog" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -205,7 +167,7 @@
               <item name="Myblog" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Myblog" type="b2602c69:ProjectViewProjectNode" />
@@ -259,7 +221,7 @@
       <updated>1604838389061</updated>
       <workItem from="1604838390440" duration="2272000" />
       <workItem from="1604840738488" duration="9586000" />
-      <workItem from="1604884296391" duration="14825000" />
+      <workItem from="1604884296391" duration="15253000" />
     </task>
     <task id="LOCAL-00001" summary="不推送文件">
       <created>1604884460093</created>
@@ -296,17 +258,31 @@
       <option name="project" value="LOCAL" />
       <updated>1604903770554</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="上传图片">
+      <created>1604904330255</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1604904330255</updated>
+    </task>
+    <task id="LOCAL-00007" summary="上传图片">
+      <created>1604904400320</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1604904400320</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26683000" />
+    <option name="totallyTimeSpent" value="27111000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.141258" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.141258" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -320,7 +296,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.18438178" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.18438178" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Word Book" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -339,7 +315,8 @@
     <MESSAGE value="添加后台分类管理、后台链接管理" />
     <MESSAGE value="添加后台评论管理" />
     <MESSAGE value="添加编辑页面、mkdown编辑器" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加编辑页面、mkdown编辑器" />
+    <MESSAGE value="上传图片" />
+    <option name="LAST_COMMIT_MESSAGE" value="上传图片" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://D:/WORKON_HOME/flaskblog/Lib/site-packages/flask_login/config.py" />
@@ -371,16 +348,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/web/blog.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -388,34 +355,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/blog/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/blog/blog_base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2010">
-          <caret line="67" column="14" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
-          <folding>
-            <element signature="e#3949#3955#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/blog/category.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -546,17 +489,6 @@
           <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#3#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/macros.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="339" column="14" selection-start-line="339" selection-start-column="14" selection-end-line="339" selection-end-column="14" />
-          <folding>
-            <element signature="e#25498#25506#1" expanded="true" />
-            <element signature="e#32630#32637#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -696,13 +628,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/configs.py">
+    <entry file="file://$PROJECT_DIR$/app/templates/admin/post_editor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="25" column="76" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="642">
+          <caret line="117" column="14" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -716,10 +645,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/post_editor.html">
+    <entry file="file://$PROJECT_DIR$/app/configs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="117" column="14" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
+        <state relative-caret-position="480">
+          <caret line="25" column="76" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/blog/category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="17" column="41" lean-forward="true" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/blog/blog_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/blog/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/web/blog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/macros.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="187" column="35" lean-forward="true" selection-start-line="187" selection-start-column="35" selection-end-line="187" selection-end-column="35" />
+          <folding>
+            <element signature="e#25498#25506#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
