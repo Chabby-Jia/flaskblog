@@ -31,7 +31,9 @@ body {
 
 /* 巨幕开始 */
 .jumbotron {
-    background: linear-gradient(to right top, #006bc9, #008ecc, #00b0cc, #00ccc5, #00b593);
+    /*background: linear-gradient(to right top, #006bc9, #008ecc, #00b0cc, #00ccc5, #00b593);*/
+    /*background-image: url(https://img.hizxc.com/wp-content/uploads/2020/01/flaskmanagecategoryajax.jpg);*/
+    background-image: linear-gradient(0deg,rgba(34,34,34,.5),rgba(34,34,34,.5)),url(https://img.hizxc.com/wp-content/uploads/2020/01/flaskmanagecategoryajax.jpg);
     color: #ffffff;
     overflow: hidden;
 }
@@ -216,6 +218,7 @@ footer p {
 .category-jumbotron {
     height: 30rem;
 }
+
 .jumbotron .display-4 {
     text-align: center;
     font-size: 3rem;

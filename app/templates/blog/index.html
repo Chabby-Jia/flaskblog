@@ -1,17 +1,17 @@
-{% extends 'base.html' %}
-{% from 'macros.html' import render_index_links , render_post_summary , render_pagination , render_posts_container %}
-<!--     -->
+<!-- app/templates/blog/index.html -->
+
+{% extends 'blog/blog_base.html' %}
+{% from 'macros.html' import render_index_links, render_posts_container %}
 
 {% block meta %}
-<meta name="description" content="{{ admin.blog_subtitle }}">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Home">
-<meta property="og:description" content="{{ admin.blog_subtitle }}">
-<meta property="og:url" content="{{ request.url }}">
+    <meta name="description" content="{{ admin.blog_subtitle }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Home">
+    <meta property="og:description" content="{{ admin.blog_subtitle }}">
+    <meta property="og:url" content="{{ request.url }}">
 {% endblock %}
 
 {% block title %}{{ admin.blog_title }} - {{ admin.blog_subtitle }}{% endblock %}
-
 
 {% block content %}
     <!-- 巨幕开始 -->
@@ -28,20 +28,14 @@
     </div>
     <!-- 巨幕结束 -->
 
-    <!-- 文章摘要开始 -->
-    <div class="container posts-container">
-        <div class="row">
-            <div class="col-12 header">
-                <hr>
-            </div>
-            {{ render_posts_container(pagination, admin, 'web.index') }}
-        </div>
-    </div>
-    <!-- 文章摘要结束 -->
+    {{ render_posts_container(pagination, admin, 'web.index') }}
+
     {{ super() }}
+
 {% endblock %}
 
 {% block js %}
     {{ super() }}
+    <script src="{{ url_for('static', filename='js/totop.js') }}"></script>
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 {% endblock %}
