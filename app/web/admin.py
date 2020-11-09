@@ -1,14 +1,15 @@
 import json
-
-from flask import render_template, url_for, redirect, request, abort
+from flask import render_template, url_for, redirect, request, abort, flash, current_app
 from flask_login import login_required
-
 from app.web import web
 from app.forms.category import NewCategoryForm, EditCategoryForm
 from app.forms.link import NewLinkForm, EditLinkForm
-from app.models import Category, Link
+from app.models import Category, Link, Comment
 from app.libs.extensions import db
-from app.libs.helpers import get_form_error_items, check_ajax_request_data
+from app.libs.helpers import get_form_error_items, check_ajax_request_data, redirect_back
+
+
+
 
 
 @web.route('/admin')
@@ -175,3 +176,118 @@ def delete_link(link_id):
     with db.auto_commit():
         db.session.delete(link)
     return redirect(url_for('web.manage_link'))
+
+
+
+
+@web.route('/admin/comment/<any(all, unreviewed, reviewed, trash, mine):status>')
+@web.route('/admin/comment', defaults={'status': 'all'})
+@login_required
+def manage_comment(status):
+    """
+    后台评论管理视图
+    直接访问 /admin/comment 显示全部评论
+    :param status: 筛选评论 status = all or unreviewed or reviewed or trash or mine
+    """
+    # 获取分页显示数量
+    per_page = current_app.config['ADMIN_PER_PAGE']
+
+    # 评论的五种不同 query 对象字典
+    comments_query_dict = {
+        'all': Comment.query.filter_by(trash=False),
+        'unreviewed': Comment.query.filter_by(reviewed=False, trash=False),
+        'reviewed': Comment.query.filter_by(reviewed=True, trash=False, from_admin=False),
+        'trash': Comment.query.filter_by(trash=True),
+        'mine': Comment.query.filter_by(from_admin=True)
+    }
+    pagination = comments_query_dict.get(status).order_by(Comment.create_time.desc()).paginate(per_page=per_page)
+
+    # 五种评论所对应的 URL 以及总数
+    comments_info_dict = {
+        '全部': [url_for('web.manage_comment', status='all'), comments_query_dict.get('all').count()],
+        '我的': [url_for('web.manage_comment', status='mine'), comments_query_dict.get('mine').count()],
+        '待审核': [url_for('web.manage_comment', status='unreviewed'), comments_query_dict.get('unreviewed').count()],
+        '已审核': [url_for('web.manage_comment', status='reviewed'), comments_query_dict.get('reviewed').count()],
+        '回收站': [url_for('web.manage_comment', status='trash'), comments_query_dict.get('trash').count()]
+    }
+
+    # manage_comment.html 后面会创建
+    return render_template('admin/manage_comment.html', pagination=pagination,
+                           comments_info_dict=comments_info_dict, status=status)
+
+
+
+
+@web.route('/admin/review-comment/<int:comment_id>/<any(do, undo):action>', methods=['POST'])
+@login_required
+def review_comment(comment_id, action):
+    """
+    审核评论视图，可执行审核以及撤销审核操作
+    :param comment_id: 评论 id
+    :param action: 执行方式 action = do or undo
+    """
+    comment = Comment.query.get_or_404(comment_id)
+    if action == 'do':
+        comment.reviewed = True
+        flash_message = '评论审核成功'
+    else:
+        comment.reviewed = False
+        flash_message = '撤销评论审核成功'
+    with db.auto_commit():
+        db.session.add(comment)
+    flash(flash_message, 'success')
+    return redirect_back()
+
+
+
+
+@web.route('/admin/trash-record/<any(Comment, Post):model_name>/<int:record_id>/<any(do, undo):action>',
+           methods=['POST'])
+@login_required
+def trash_record(model_name, record_id, action):
+    """
+    移动评论或文章至回收站视图，软删除
+    :param model_name: 数据表模型名称，model_name = Comment or Post
+    :param record_id: 记录 id
+    :param action: 执行方式 action = do or undo
+    """
+    model = current_app.config['MODELS'].get(model_name)
+    record = model.query.get_or_404(record_id)
+    if action == 'do':
+        record.trash = True
+        flash_message = '评论已被移入回收站' if model_name == 'Comment' else '文章已被移入回收站'
+    else:
+        record.trash = False
+        flash_message = '评论已被移出回收站' if model_name == 'Comment' else '文章已被移出回收站'
+    with db.auto_commit():
+        db.session.add(record)
+    flash(flash_message, 'success')
+    return redirect_back()
+
+
+
+@web.route('/admin/delete-record/<any(Comment, Post):model_name>/<int:record_id>', defaults={'action': 'one'},
+           methods=['POST'])
+@web.route('/admin/delete-record/<any(Comment, Post):model_name>/<any(all, one):action>', defaults={'record_id': None},
+           methods=['POST'])
+@login_required
+def delete_record(model_name, record_id, action):
+    """
+    删除文章或评论视图
+    :param model_name: 数据表模型名称，model_name = Comment or Post
+    :param record_id: 记录 id
+    :param action: 执行操作 action = all 删除全部回收站评论
+    """
+    model = current_app.config['MODELS'].get(model_name)
+    if action == 'all':
+        with db.auto_commit():
+            for record in model.query.filter_by(trash=True).all():
+                db.session.delete(record)
+        flash('回收站已清空', 'success')
+        return redirect_back(default_endpoint='web.manage_comment')
+    record = model.query.get_or_404(record_id)
+    with db.auto_commit():
+        db.session.delete(record)
+    flash_message = '评论已删除' if model_name == 'Comment' else '文章已删除'
+    flash(flash_message, 'success')
+    return redirect_back()

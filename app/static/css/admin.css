@@ -136,3 +136,52 @@ tbody tr {
     /* 编辑表单 */
     padding-left: 3px;
 }
+
+
+
+/* 评论页导航栏开始 */
+.nav {
+    background: #fff;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.nav-link.active {
+    font-weight: bold;
+    color: #333333;
+}
+.nav-link.active .badge {
+    background: transparent;
+    color: #585c60;
+    border: 1px solid #585c60;
+}
+/* 评论页导航栏结束 */
+/* 评论信息展示表格开始 */
+.comment-table p {
+    margin-bottom: unset;
+}
+.comment-table,
+.comment-table .btn {
+    font-size: .8rem;
+}
+/* 评论信息展示表格结束 */
+/* 分页器开始 */
+.pagination {
+    margin-bottom: 50px;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1);
+}
+.page-link {
+    color: #3498db;
+}
+.page-link:hover {
+    color: #2980b9;
+}
+.page-item.active .page-link {
+    background: #3498db;
+    border-color: #3498db;
+}
+/* 分页器结束 */
+/* 警告弹框 */
+.alert {
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.1);
+}

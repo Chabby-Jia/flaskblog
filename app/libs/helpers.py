@@ -74,3 +74,31 @@ def check_ajax_request_data(data, target_model_name):
         failed_data['msg'] = '未查找到任何记录'
         return json.dumps(failed_data)
     return record
+
+
+
+
+# 引入必要模块
+from urllib.parse import urlparse, urljoin
+from flask import request, redirect, url_for
+def is_safe_url(target):
+    """
+    校验 URL 是否属于本站
+    :param target: 需要校验的 URL
+    :return True or False
+    """
+    ref_url = urlparse(request.host_url)
+    test_url = urlparse(urljoin(request.host_url, target))
+    return test_url.scheme in ('http', 'https') and ref_url.netloc == test_url.netloc
+def redirect_back(default_endpoint='web.index', **kwargs):
+    """
+    执行跳转操作，可用于各种 POST 操作之后的跳转
+    :param default_endpoint: 默认 endpoint，如果获取不到 `next` 以及 `request.referrer` 或 URL 校验失败之后的默认跳转页面
+    :param **kwargs 视图可能所需的参数
+    """
+    for target in request.args.get('next'), request.referrer:
+        if not target:
+            continue
+        if is_safe_url(target):
+            return redirect(target)
+    return redirect(url_for(default_endpoint, **kwargs))

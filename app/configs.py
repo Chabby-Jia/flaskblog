@@ -17,6 +17,10 @@ class BaseConfig:
     PERMANENT_SESSION_LIFETIME = timedelta(days=3)
     # 添加一个 MODELS 字典，存放模型名称:模型
     MODELS = {'Admin': Admin, 'Category': Category, 'Comment': Comment, 'Link': Link, 'Post': Post}
+    # 后台分页数量
+    ADMIN_PER_PAGE = 20
+
+
 class DevelopmentConfig(BaseConfig):
     """
     开发环境配置类
