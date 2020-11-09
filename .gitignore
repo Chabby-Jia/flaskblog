@@ -1,8 +1,32 @@
+__pycache__/
 
+lib64/
+parts/
+sdist/
+var/
+*.manifest
+*.spec
 *.log
-*.zip
-.idea
-.vscode/
 
-*/__pycache__
+# Flask stuff:
+instance/
+.webassets-cache
 
+# Scrapy stuff:
+.scrapy
+
+# pyenv
+.python-version
+
+# Environments
+.env
+
+# Development
+*.db
+.idea/
+
+whooshee
+migrations
+.DS_Store
+
+!.gitkeep
