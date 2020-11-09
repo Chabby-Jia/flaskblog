@@ -1,0 +1,47 @@
+import os
+# SEND_FILE_MAX_AGE_DEFAULT 接受 timedelta 对象作为值
+from datetime import timedelta
+
+
+
+class BaseConfig:
+    """
+    配置基类，公用配置写在这里
+    """
+    SECRET_KEY = os.getenv("SECRET_KEY")
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_RECORD_QUERIES = True
+    # 设置用户勾选了 “记住我” 之后登陆状态保留 31 天
+    REMEMBER_COOKIE_DURATION = timedelta(days=31)
+    # 设置默认的 session cookie 过期时间，就让它 3 天过期吧
+    PERMANENT_SESSION_LIFETIME = timedelta(days=3)
+
+class DevelopmentConfig(BaseConfig):
+    """
+    开发环境配置类
+    """
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URI')
+    # 设置缓存时间为 1 秒，这样就不存在需要我们手动清空缓存的问题了
+    SEND_FILE_MAX_AGE_DEFAULT = timedelta(seconds=1)
+
+
+class TestConfig(BaseConfig):
+    """
+    测试环境配置类
+    """
+    pass
+
+
+class ProductionConfig(BaseConfig):
+    """
+    生产环境配置类
+    """
+    pass
+
+
+# 配置类字典，根据传递的 key 选择不同的配置类
+configs = {
+    "development": DevelopmentConfig,
+    "test": TestConfig,
+    "production": ProductionConfig
+}
