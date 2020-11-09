@@ -82,11 +82,11 @@ def register_template_context(app):
         admin = Admin.query.first()
         categories = Category.query.all()
         links = Link.query.all()
-        # 当前年份，页脚所需数据
         current_year = datetime.now().year
-        return {"admin": admin, "categories": categories, "links": links, "current_year": current_year}
-
-
+        # 额外查询未审核评论数量传递给模板
+        unreviewed_comment_count = Comment.query.filter_by(reviewed=False, trash=False).count()
+        return {"admin": admin, "categories": categories, "links": links, "current_year": current_year,
+                "unreviewed_comment_count": unreviewed_comment_count}
 
 # 然后给 initdb 命令添加一个参数
 def register_cli(app: Flask):

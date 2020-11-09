@@ -312,40 +312,49 @@ a.reply-author:hover {
     background: #f8f8f8;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
 }
+
 .error-msg {
     margin-top: 1rem;
 }
+
 /* 回复表单错误信息页面结束 */
 
 /* 评论表单开始 */
 #commentForm {
     position: relative;
 }
+
 #commentForm .close {
     position: absolute;
     right: 1px;
     top: -2px;
 }
+
 .form-container {
     margin: 0 auto;
 }
+
 .form-container .form-control {
     border-radius: unset;
     background: #f8f8f8;
 }
+
 .form-container .form-control:focus {
     border-color: #ced4da;
     box-shadow: none;
 }
+
 .form-container .btn {
     background: #00b593;
     border: 1px solid #00b593;
     border-radius: unset;
     color: #fff;
 }
+
 .form-container .btn:hover {
     box-shadow: 0 10px 20px 0 rgba(1, 1, 1, .15);
 }
+
 /* 评论表单结束 */
 
 #flash {
@@ -366,9 +375,11 @@ a.reply-author:hover {
     transition: border-bottom-color 1s;
     color: #f8f8f8;
 }
+
 .search-form:hover #searchInput {
     border-bottom-color: #fff;
 }
+
 .search-form #searchInput:focus {
     background: transparent;
     border-color: transparent;
@@ -376,10 +387,45 @@ a.reply-author:hover {
     border-bottom-color: #fff;
     color: #f8f8f8;
 }
+
 .search-form .btn {
     background: rgba(255, 255, 255, .1);
 }
+
 .search-form .btn:hover {
     background: rgba(255, 255, 255, .3);
 }
 /* 导航栏搜索框结束 */
+
+/* 关于页面开始 */
+.about-header {
+    margin: 5rem auto 0 auto;
+}
+
+.about-title {
+    font-size: 3rem;
+}
+
+.link-container,
+.link-header {
+    /* 关于页面 link 容器及标题 */
+    margin: 0 auto;
+}
+/* 关于页面结束 */
+
+/* 管理员导航开始 */
+.admin-nav {
+    background: #23282d;
+}
+
+.admin-nav .btn {
+    background: #23282d;
+    color: #f8f8f8;
+    border-radius: unset;
+}
+
+.admin-nav .btn:hover {
+    background: #41484d;
+    color: #3498db;
+}
+/* 管理员导航结束 */
