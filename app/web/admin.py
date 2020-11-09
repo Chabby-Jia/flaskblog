@@ -4,10 +4,10 @@ from flask_login import login_required
 from app.web import web
 from app.forms.category import NewCategoryForm, EditCategoryForm
 from app.forms.link import NewLinkForm, EditLinkForm
-from app.models import Category, Link, Comment
+from app.models import Category, Link, Comment , Post
 from app.libs.extensions import db
-from app.libs.helpers import get_form_error_items, check_ajax_request_data, redirect_back
-
+from app.libs.helpers import get_form_error_items, check_ajax_request_data, redirect_back, remove_html_tag
+from app.forms.post import PostForm
 
 
 
@@ -291,3 +291,132 @@ def delete_record(model_name, record_id, action):
     flash_message = '评论已删除' if model_name == 'Comment' else '文章已删除'
     flash(flash_message, 'success')
     return redirect_back()
+
+
+@web.route('/admin/post/<any(all, draft, trash):status>')
+@web.route('/admin/post', defaults={'status': 'all'})
+@login_required
+def manage_post(status):
+    """
+    后台文章管理视图
+    后台直接访问 /admin/post 显示全部文章
+    :param status: status 筛选文章 status = all or draft or trash
+    """
+    per_page = current_app.config['ADMIN_PER_PAGE']
+    # 三种不同文章状态的 query 对象
+    posts_query_dict = {
+        'all': Post.query.filter_by(trash=False),
+        'draft': Post.query.filter_by(published=False),
+        'trash': Post.query.filter_by(trash=True)
+    }
+    pagination = posts_query_dict.get(status).order_by(Post.create_time.desc()).paginate(per_page=per_page)
+    # 三种类型文章对应的 URL 以及总数
+    posts_info_dict = {
+        '全部': [url_for('web.manage_post', status='all'), posts_query_dict.get('all').count()],
+        '草稿': [url_for('web.manage_post', status='draft'), posts_query_dict.get('draft').count()],
+        '回收站': [url_for('web.manage_post', status='trash'), posts_query_dict.get('trash').count()],
+    }
+
+    # manage_post.html 后面会创建
+    return render_template('admin/manage_post.html', pagination=pagination,
+                           posts_info_dict=posts_info_dict, status=status)
+
+
+
+
+
+@web.route('/admin/close-comment/<int:post_id>/<any(do, undo):action>', methods=['POST'])
+@login_required
+def close_comment(post_id, action):
+    """
+    关闭文章评论视图
+    :param post_id: 文章 id
+    :param action: 执行操作，action = do or undo
+    """
+    post = Post.query.get_or_404(post_id)
+    if action == 'do':
+        post.can_comment = True
+        flash_message = f'文章 "{post.title}" 评论功能已开启'
+    else:
+        post.can_comment = False
+        flash_message = f'文章 "{post.title}" 评论功能已关闭'
+    with db.auto_commit():
+        db.session.add(post)
+        flash(flash_message, 'success')
+    return redirect_back()
+
+
+
+
+@web.route('/admin/new-post', methods=['POST', 'GET'])
+@login_required
+def new_post():
+    """新建文章视图"""
+    form = PostForm(request.form)
+    if form.validate_on_submit():
+        form.content.data = request.form['markdownEditor-html-code']
+        form.categories.data = [Category.query.get(category_id) for category_id in form.categories.data]
+
+        if not form.description.data:
+            form.description.data = remove_html_tag(form.content.data)[0:150]
+        # 依据点击按钮的不同执行不同操作
+        if form.publish.data:
+            with db.auto_commit():
+                post = Post()
+                # 发布，则 published 字段值为 True
+                # 因为这个字段的值默认为 True，所以可以不写
+                # post.published = True
+                post.set_attr(form.data)
+                db.session.add(post)
+            flash('文章已发布', 'success')
+        if form.save.data:
+            with db.auto_commit():
+                post = Post()
+                post.set_attr(form.data)
+                # 保存为草稿，则 published 字段值为 False
+                post.published = False
+                db.session.add(post)
+            flash('文章已保存为草稿', 'success')
+
+        return redirect(url_for('web.manage_post'))
+
+    return render_template('admin/post_editor.html', form=form)
+
+
+@web.route('/admin/edit-post/<int:post_id>', methods=['POST', 'GET'])
+@login_required
+def edit_post(post_id):
+    """
+    编辑文章视图
+    :param post_id: 文章 id
+    """
+    post = Post.query.get_or_404(post_id)
+    form = PostForm(request.form)
+    if form.validate_on_submit():
+        form.content.data = request.form['markdownEditor-html-code']
+        form.categories.data = [Category.query.get(category_id) for category_id in form.categories.data]
+        if not form.description.data:
+            form.description.data = remove_html_tag(form.content.data)[0:150]
+        if form.publish.data:
+            with db.auto_commit():
+                post.set_attr(form.data)
+                post.published = True
+                db.session.add(post)
+            flash('文章已更新', 'success')
+        if form.save.data:
+            with db.auto_commit():
+                post.set_attr(form.data)
+                post.published = False
+                db.session.add(post)
+            flash('文章已保存为草稿', 'success')
+        return redirect(url_for('web.manage_post'))
+
+    # 将查询结果对应字段值赋值给表单字段的对应值
+    # 如果表单验证失败，则不进行赋值，避免覆盖原本输入内容
+    if not form.errors:
+        form.title.data = post.title
+        form.categories.data = [category.id for category in post.categories]
+        form.content_markdown.data = post.content_markdown
+        form.description.data = post.description
+        form.can_comment.data = post.can_comment
+    return render_template('admin/post_editor.html', form=form, post=post)

@@ -1,4 +1,5 @@
 import json
+import re
 # 引入 ImmutableMultiDict 做数据类型判断
 from werkzeug.datastructures import ImmutableMultiDict
 from flask import current_app
@@ -102,3 +103,14 @@ def redirect_back(default_endpoint='web.index', **kwargs):
         if is_safe_url(target):
             return redirect(target)
     return redirect(url_for(default_endpoint, **kwargs))
+
+
+
+def remove_html_tag(html_str):
+    """
+    去除 HTML 标记
+    :param html_str: HTML 字符串
+    :return: 无 HTML 标记字符串
+    """
+    regex = re.compile('<[^>]*>')
+    return regex.sub('', html_str).replace('\n', '').replace('\r', '').replace(' ', '')
