@@ -25,6 +25,15 @@ class BaseConfig:
     # 允许上传的文件格式
     ALLOWED_EXTENSIONS = ("jpg", "jpeg", "gif", "png", "bmp", "webp", 'svg')
 
+
+    # 邮箱配置
+    MAIL_SERVER = os.getenv('MAIL_SERVER')
+    MAIL_PORT = os.getenv('MAIL_PORT')
+    MAIL_USE_SSL = os.getenv('MAIL_USE_SSL')
+    MAIL_USE_TSL = os.getenv('MAIL_USE_TSL')
+    MAIL_USERNAME = os.getenv('MAIL_USERNAME')
+    MAIL_PASSWORD = os.getenv('MAIL_PASSWORD')
+
 class DevelopmentConfig(BaseConfig):
     """
     开发环境配置类

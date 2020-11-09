@@ -28,6 +28,7 @@ class FakeData:
             admin.blog_title = '临时Blog名'
             admin.blog_subtitle = '临时Blog副标题'
             admin.blog_about = FakeData.FAKER.text(1000)
+            admin.email = 'admin@admin.com'
             db.session.add(admin)
 
 

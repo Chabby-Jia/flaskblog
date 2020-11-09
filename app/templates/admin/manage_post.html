@@ -59,7 +59,13 @@
                     {% for post in pagination.items %}
                         <tr>
                             <!-- todo: 跳转到对应文章 -->
-                            <td>{{ post.title }}{% if not post.published %} - <span class="text-danger small">草稿</span>{% endif %}</td>
+                            <td>
+                                <a href="{{ url_for('web.post', post_id=post.id) }}" target="_blank">
+                                    {{ post.title }}
+                                </a>
+
+
+                                {% if not post.published %} - <span class="text-danger small">草稿</span>{% endif %}</td>
                             <td>
                                 {{ post.categories|map(attribute='name')|join('、') }}
                             </td>

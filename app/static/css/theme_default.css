@@ -247,3 +247,110 @@ footer p {
     padding-right: 15px;
 }
 /* 文章详情结束 */
+
+
+.sub-container {
+    /* 下方容器 */
+    box-shadow: 0 30px 50px 0 rgba(1, 1, 1, .15);
+    position: relative;
+    background: #f8f8f8;
+    top: -80px
+}
+/* 评论开始展示 */
+.comments-container {
+    margin: 0 auto;
+}
+.comments-container p {
+    margin-bottom: .5rem;
+}
+.comments-container .item {
+    list-style: none;
+}
+.comments-container hr {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.comment-container {
+    margin-bottom: 2rem;
+}
+.comment-author {
+    color: #212529;
+    font-size: 1.2rem;
+}
+a.comment-author:hover {
+    color: #4a4f53;
+}
+.comment-content {
+    line-height: 2rem;
+}
+.reply-author {
+    color: #212529;
+}
+a.reply-author:hover {
+   color: #4a4f53;
+}
+.reply-link {
+    color: #00b593;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #00b593;
+    transition: border-bottom-color 500ms;
+}
+.reply-link:hover {
+    color: #00b593;
+    text-decoration: none;
+    border-bottom-color: transparent;
+}
+.reply-content {
+    line-height: 2rem;
+    font-size: .9rem;
+}
+/* 评论展示结束 */
+
+/* 回复表单错误信息页面开始 */
+.reply-errors {
+    margin: 100px auto 0;
+    background: #f8f8f8;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+}
+.error-msg {
+    margin-top: 1rem;
+}
+/* 回复表单错误信息页面结束 */
+
+/* 评论表单开始 */
+#commentForm {
+    position: relative;
+}
+#commentForm .close {
+    position: absolute;
+    right: 1px;
+    top: -2px;
+}
+.form-container {
+    margin: 0 auto;
+}
+.form-container .form-control {
+    border-radius: unset;
+    background: #f8f8f8;
+}
+.form-container .form-control:focus {
+    border-color: #ced4da;
+    box-shadow: none;
+}
+.form-container .btn {
+    background: #00b593;
+    border: 1px solid #00b593;
+    border-radius: unset;
+    color: #fff;
+}
+.form-container .btn:hover {
+    box-shadow: 0 10px 20px 0 rgba(1, 1, 1, .15);
+}
+/* 评论表单结束 */
+
+#flash {
+    /* flash 消息 */
+    margin: 0 auto;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 .5rem .5rem;
+}

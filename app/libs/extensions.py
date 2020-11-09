@@ -6,6 +6,10 @@ from contextlib import contextmanager
 from flask_sqlalchemy import SQLAlchemy as _SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
+from flask_mail import Mail
+
+
+
 
 class SQLALCHEMY(_SQLAlchemy):
     """
@@ -41,3 +45,4 @@ def get_login_manager():
 db = SQLALCHEMY()
 migrate = Migrate()
 csrf_protect = CSRFProtect()
+mail = Mail()
