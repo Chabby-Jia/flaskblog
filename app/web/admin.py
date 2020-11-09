@@ -5,11 +5,11 @@ from flask_login import login_required
 from app.web import web
 from app.forms.category import NewCategoryForm, EditCategoryForm
 from app.forms.link import NewLinkForm, EditLinkForm
-from app.models import Category, Link, Comment , Post
+from app.models import Category, Link, Comment , Post, Admin
 from app.libs.extensions import db , csrf_protect
 from app.libs.helpers import get_form_error_items, check_ajax_request_data, redirect_back , allowed_file, avoided_file_duplication, remove_html_tag
 from app.forms.post import PostForm
-
+from app.forms.admin import AdminForm
 
 
 
@@ -460,3 +460,28 @@ def upload_image():
     base_info['message'] = '图片上传成功'
     base_info['url'] = url_for('web.uploaded_image', filename=filename)
     return json.dumps(base_info)
+
+
+
+@web.route('/admin/blog-setting', methods=['GET', 'POST'])
+@login_required
+def blog_setting():
+    """Blog设置视图"""
+    form = AdminForm(request.form)
+    admin = Admin.query.first()
+    if form.validate_on_submit():
+        form.blog_about.data = request.form['markdownEditor-html-code']
+        with db.auto_commit():
+            admin.set_attr(form.data)
+            db.session.add(admin)
+        flash('Blog设置更新成功。', 'success')
+        redirect_back()
+    if not form.errors:
+        form.blog_title.data = admin.blog_title
+        form.blog_subtitle.data = admin.blog_subtitle
+        form.nickname.data = admin.nickname
+        form.email.data = admin.email
+        form.post_per_page.data = admin.post_per_page
+        form.comment_per_page.data = admin.comment_per_page
+        form.blog_about_markdown.data = admin.blog_about_markdown
+    return render_template('admin/blog_setting.html', form=form)

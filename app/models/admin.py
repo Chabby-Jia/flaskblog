@@ -29,7 +29,8 @@ class Admin(Base , UserMixin):
     # 评论每页展示数量
     comment_per_page = db.Column(db.Integer, default=10)
     email = db.Column(db.String(64), nullable=False)
-
+    # 新建一个字段保存 Markdown 格式字符串
+    blog_about_markdown = db.Column(db.Text)
 
     # 处理密码相关的查询、储存、校验工作
     @property
