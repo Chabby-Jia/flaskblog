@@ -1,0 +1,8 @@
+
+*.log
+*.zip
+.idea
+.vscode/
+
+*/__pycache__
+
