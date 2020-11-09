@@ -5,11 +5,13 @@ import os
 from flask import Flask
 # 引入配置字典
 from app.configs import configs
-from app.libs.extensions import db, migrate , get_login_manager
+from app.libs.extensions import db, migrate , get_login_manager , csrf_protect
 from app.libs.fake_data import FakeData
 from app.models import Post, Category, post_category_middle, Comment, Admin, Link
 # 引入 datetime
 from datetime import datetime
+from app.libs.custom_filters import switch_link_tag
+
 
 
 
@@ -27,12 +29,21 @@ def create_app(config="development"):
     # 调用函数
     register_template_context(app)
 
+    # 注册自定义过滤器
+    add_template_filters(app)
+
     # 调用注册命令函数
     register_cli(app)
 
     return app
 
 
+
+def add_template_filters(app):
+    """
+    注册自定义模板验证器
+    """
+    app.add_template_filter(switch_link_tag)
 
 
 def register_blueprints(app):
@@ -53,7 +64,7 @@ def register_extensions(app):
     """
     db.init_app(app)
     migrate.init_app(app, db)
-
+    csrf_protect.init_app(app)
     # 获取 login_manager 并调用 init_app 方法将其注册到 Flask 核心对象上
     login_manager = get_login_manager()
     login_manager.init_app(app)

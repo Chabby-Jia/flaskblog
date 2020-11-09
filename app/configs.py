@@ -1,7 +1,7 @@
 import os
 # SEND_FILE_MAX_AGE_DEFAULT 接受 timedelta 对象作为值
 from datetime import timedelta
-
+from app.models import Admin, Category, Comment, Link, Post
 
 
 class BaseConfig:
@@ -15,7 +15,8 @@ class BaseConfig:
     REMEMBER_COOKIE_DURATION = timedelta(days=31)
     # 设置默认的 session cookie 过期时间，就让它 3 天过期吧
     PERMANENT_SESSION_LIFETIME = timedelta(days=3)
-
+    # 添加一个 MODELS 字典，存放模型名称:模型
+    MODELS = {'Admin': Admin, 'Category': Category, 'Comment': Comment, 'Link': Link, 'Post': Post}
 class DevelopmentConfig(BaseConfig):
     """
     开发环境配置类
