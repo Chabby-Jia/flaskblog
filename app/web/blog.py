@@ -35,3 +35,11 @@ def category(name_or_alias):
     # 过滤文章只查询已发布且不再回收站中的
     pagination = Post.query.with_parent(category).filter_by(trash=False, published=True).order_by(Post.create_time.desc()).paginate(per_page=per_page)
     return render_template('blog/category.html', category=category, pagination=pagination)
+
+
+
+
+@web.route('/post/<int:post_id>', methods=['GET', 'POST'])
+def post(post_id):
+    post = Post.query.filter_by(id=post_id, trash=False, published=True).first_or_404()
+    return render_template('blog/post.html', post=post)

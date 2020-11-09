@@ -223,3 +223,27 @@ footer p {
     text-align: center;
     font-size: 3rem;
 }
+
+.post-jumbotron {
+    /* 文章详情页巨幕 */
+    height: 15rem;
+}
+/* 文章详情开始 */
+.first-container {
+    box-shadow: 0 30px 40px 0 rgba(1, 1, 1, .15);
+    position: relative;
+    top: -150px;
+    background: #f8f8f8;
+}
+.post-header {
+    margin: 5rem auto 0 auto;
+}
+.post-title {
+    font-size: 3rem;
+}
+#postContent {
+    background: #f8f8f8;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/* 文章详情结束 */

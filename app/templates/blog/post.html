@@ -1,0 +1,82 @@
+<!-- app/templates/blog/post.html -->
+{% extends 'blog/blog_base.html' %}
+
+{% block meta %}
+    <meta name="description" content="{{ post.description }}">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ post.title }}">
+    <meta property="og:description" content="{{ post.description }}">
+    <meta property="og:url" content="{{ request.url }}">
+{% endblock %}
+
+
+{% block css %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='3rd/editor/css/editormd.preview.css') }}">
+{% endblock %}
+
+{% block title %}{{ post.title }} - {{ admin.blog_title }}{% endblock %}
+
+{% block content %}
+    <div class="jumbotron jumbotron-fluid d-flex align-items-center post-jumbotron"></div>
+
+    <div class="container first-container">
+        <div class="row">
+            <div class="col-10 post-header">
+                <h1 class="post-title">{{ post.title }}</h1>
+                <div class="post-meta">
+                    <span>{{ admin.nickname }}</span>
+                    <span class="meta-divider">/</span>
+                    {% for category in post.categories %}
+                        <a class="meta-link"
+                           href="{{ url_for('web.category', name_or_alias=category.alias or category.name) }}">{{ category.name }}</a>
+                    {% endfor %}
+                    <span class="meta-divider">/</span>
+                    <span class="time">{{ post.create_time }}</span>
+                    {% if post.can_comment %}
+                        <span class="meta-divider">/</span>
+                        <a href="#commentResponse" class="meta-link">添加评论</a>
+                    {% endif %}
+                </div>
+            </div>
+            <!-- 文章正文 -->
+            <div class="col-10 post-container" id="postContent">
+                {{ post.content|safe }}
+            </div>
+            {# 锚点 #}
+            <div id="commentResponse" class="col-12"></div>
+        </div>
+    </div>
+
+    {{ super() }} {# 继承返回顶部按钮 #}
+{% endblock %}
+
+{% block js %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/totop.js') }}"></script>
+    <!-- Editor 渲染文章正文所需 js 脚本 -->
+    <!-- marked.min.js、prettify.min.js、editormd.min.js 为必要引入，其余则是为了额外功能 -->
+    <script src="{{ url_for('static', filename='3rd/editor/lib/marked.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='3rd/editor/lib/prettify.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='3rd/editor/lib/raphael.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='3rd/editor/lib/underscore.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='3rd/editor/lib/flowchart.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='3rd/editor/lib/jquery.flowchart.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='3rd/editor/lib/sequence-diagram.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='3rd/editor/editormd.min.js') }}"></script>
+    <script>
+        (function ($) {
+            // 转换文章正文
+            editormd.markdownToHTML('postContent', {
+                tex: true,
+                flowChart: true,
+                sequenceDiagram: true
+            });
+
+            // 时间本地化
+            $('.time').each(function () {
+                this.innerText = $.toLocalTime(this.innerText)
+            });
+        })(jQuery);
+    </script>
+{% endblock %}
