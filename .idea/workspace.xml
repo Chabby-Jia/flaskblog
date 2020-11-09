@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a6b8c0f-2ab6-4161-864c-f1446073b92f" name="Default Changelist" comment="">
+    <list default="true" id="3a6b8c0f-2ab6-4161-864c-f1446073b92f" name="Default Changelist" comment="后台优化">
+      <change afterPath="$PROJECT_DIR$/app/templates/error/error.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/admin/admin_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin/admin_index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/web/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/web/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/theme_default.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/theme_default.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,34 +16,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/web/admin.py">
+        <entry file="file://$PROJECT_DIR$/app/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="632">
+              <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#19#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/admin/admin_index.html">
+        <entry file="file://$PROJECT_DIR$/app/templates/error/error.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="780">
+              <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/static/css/admin.css">
+        <entry file="file://$PROJECT_DIR$/app/static/css/theme_default.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="677">
-              <caret line="196" column="1" selection-start-line="196" selection-start-column="1" selection-end-line="196" selection-end-column="1" />
+            <state relative-caret-position="812">
+              <caret line="445" column="12" selection-start-line="445" selection-start-column="12" selection-end-line="445" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -98,7 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/static/css/login.css" />
         <option value="$PROJECT_DIR$/app/web/__init__.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/templates/base.html" />
@@ -106,7 +102,6 @@
         <option value="$PROJECT_DIR$/app/templates/blog/category.html" />
         <option value="$PROJECT_DIR$/app/templates/login/login.html" />
         <option value="$PROJECT_DIR$/app/templates/admin/admin.html" />
-        <option value="$PROJECT_DIR$/app/templates/admin/admin_base.html" />
         <option value="$PROJECT_DIR$/app/forms/category.py" />
         <option value="$PROJECT_DIR$/app/static/3rd/zepto.min.js" />
         <option value="$PROJECT_DIR$/app/static/js/manage-category.js" />
@@ -138,9 +133,7 @@
         <option value="$PROJECT_DIR$/app/libs/custom_filters.py" />
         <option value="$PROJECT_DIR$/app/templates/blog/search.html" />
         <option value="$PROJECT_DIR$/app/web/blog.py" />
-        <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/app/templates/blog/blog_base.html" />
-        <option value="$PROJECT_DIR$/app/static/css/theme_default.css" />
         <option value="$PROJECT_DIR$/app/templates/blog/about.html" />
         <option value="$PROJECT_DIR$/app/models/admin.py" />
         <option value="$PROJECT_DIR$/app/forms/admin.py" />
@@ -149,13 +142,18 @@
         <option value="$PROJECT_DIR$/app/web/admin.py" />
         <option value="$PROJECT_DIR$/app/templates/admin/admin_index.html" />
         <option value="$PROJECT_DIR$/app/static/css/admin.css" />
+        <option value="$PROJECT_DIR$/app/templates/admin/admin_base.html" />
+        <option value="$PROJECT_DIR$/app/__init__.py" />
+        <option value="$PROJECT_DIR$/app/templates/error/error.html" />
+        <option value="$PROJECT_DIR$/app/static/css/theme_default.css" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="952" />
+    <option name="y" value="-8" />
+    <option name="width" value="976" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -178,24 +176,6 @@
               <item name="Myblog" type="b2602c69:ProjectViewProjectNode" />
               <item name="Myblog" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Myblog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Myblog" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Myblog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Myblog" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Myblog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Myblog" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -209,31 +189,7 @@
               <item name="Myblog" type="b2602c69:ProjectViewProjectNode" />
               <item name="Myblog" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Myblog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Myblog" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Myblog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Myblog" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Myblog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Myblog" type="462c0819:PsiDirectoryNode" />
-              <item name="whooshee" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Myblog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Myblog" type="462c0819:PsiDirectoryNode" />
-              <item name="whooshee" type="462c0819:PsiDirectoryNode" />
-              <item name="post" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -282,7 +238,7 @@
       <updated>1604838389061</updated>
       <workItem from="1604838390440" duration="2272000" />
       <workItem from="1604840738488" duration="9586000" />
-      <workItem from="1604884296391" duration="22612000" />
+      <workItem from="1604884296391" duration="23856000" />
     </task>
     <task id="LOCAL-00001" summary="不推送文件">
       <created>1604884460093</created>
@@ -375,17 +331,31 @@
       <option name="project" value="LOCAL" />
       <updated>1604913348673</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="后台首页优化">
+      <created>1604913485264</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1604913485264</updated>
+    </task>
+    <task id="LOCAL-00015" summary="后台优化">
+      <created>1604915146071</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1604915146071</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34470000" />
+    <option name="totallyTimeSpent" value="35714000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.102878466" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10181237" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -399,7 +369,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.14642082" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.27982646" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Word Book" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -425,16 +395,11 @@
     <MESSAGE value="添加搜索框、搜索结果模板展示" />
     <MESSAGE value="更改优化首页样式界面" />
     <MESSAGE value="后台blog设置" />
-    <option name="LAST_COMMIT_MESSAGE" value="后台blog设置" />
+    <MESSAGE value="后台首页优化" />
+    <MESSAGE value="后台优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="后台优化" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/web/auth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/forms/category.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
@@ -575,13 +540,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
           <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/admin_base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -732,16 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="78" column="7" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
-          <folding>
-            <element signature="e#19#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/blog/blog_base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="477">
@@ -767,13 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
           <caret line="53" column="14" lean-forward="true" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/css/theme_default.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="429" column="1" lean-forward="true" selection-start-line="429" selection-start-column="1" selection-end-line="429" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -818,13 +759,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/web/admin.py">
+    <entry file="file://$PROJECT_DIR$/app/static/css/admin.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="587">
+          <caret line="193" column="1" lean-forward="true" selection-start-line="193" selection-start-column="1" selection-end-line="193" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -838,10 +776,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/css/admin.css">
+    <entry file="file://$PROJECT_DIR$/app/web/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="677">
-          <caret line="196" column="1" selection-start-line="196" selection-start-column="1" selection-end-line="196" selection-end-column="1" />
+        <state relative-caret-position="437">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/admin/admin_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+          <folding>
+            <element signature="e#19#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/error/error.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/css/theme_default.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="445" column="12" selection-start-line="445" selection-start-column="12" selection-end-line="445" selection-end-column="12" />
         </state>
       </provider>
     </entry>

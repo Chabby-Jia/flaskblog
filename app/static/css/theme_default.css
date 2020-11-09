@@ -429,3 +429,18 @@ a.reply-author:hover {
     color: #3498db;
 }
 /* 管理员导航结束 */
+
+/* 错误页面开始 */
+.error-header {
+    margin: 5rem auto 0;
+}
+.error-title {
+    font-size: 3rem;
+}
+.error-container {
+    margin: 0 auto;
+}
+.badge-link {
+    font-size: .9rem;
+}
+/* 错误页面结束 */
