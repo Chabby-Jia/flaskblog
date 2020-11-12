@@ -30,3 +30,5 @@ migrations
 .DS_Store
 
 !.gitkeep
+
+app/uploads/*
