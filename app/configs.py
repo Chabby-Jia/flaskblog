@@ -9,7 +9,7 @@ class BaseConfig:
     """
     配置基类，公用配置写在这里
     """
-    SECRET_KEY = os.getenv("SECRET_KEY")
+    SECRET_KEY = os.urandom(24)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECORD_QUERIES = True
     # 设置用户勾选了 “记住我” 之后登陆状态保留 31 天

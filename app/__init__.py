@@ -26,7 +26,6 @@ def create_app(config="development"):
     """
     app = Flask(__name__)
     app.config.from_object(configs[config])
-    app.secret_key = os.urandom(24)
     register_extensions(app)
     # 调用并注册相关错误处理
     register_error_templates(app)
